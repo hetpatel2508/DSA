@@ -47,22 +47,22 @@ void sort(struct array *arr)
 int binary_search(struct array *arr,int key)
 {
     int low=0;
-    int high=arr->len;
+    int high=arr->len - 1;
 
-    for(int i=0;i<arr->len;i++)
+    while (low<=high)
     {
-        int mid=(low+high)/2;
-        
-        if(key<arr->a[mid])
-        {high=mid-1;}
-    
-        if(key>arr->a[mid])
-        {low=mid+1;}
-    
-        if(key==arr->a[mid])
+        int mid = low + (high-low)/2;
+        if (arr->a[mid] == key)
         {
-        return mid;
-        break;
+            return mid;
+        }
+        else if (arr->a[mid] <= key)
+        {
+            low = mid + 1;
+        }
+        else 
+        {
+            high = mid - 1;
         }
     }
     return -1;

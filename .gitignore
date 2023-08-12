@@ -1,4 +1,2 @@
 *.exe
-temp.cpp
-temp2.cpp
-tempCodeRunnerFile.cpp
+temp*.cpp

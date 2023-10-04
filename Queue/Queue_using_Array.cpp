@@ -91,11 +91,8 @@ public:
 
     void enqueue_circular_queue(int num)
     {
-        if(front==-1)
-        {
-            enqueue_or_push(num);
-        }
-        else if ((rare+1)%size != front)
+        // if(front==-1)
+        if(front!=rare)
         {
             rare=(rare+1)%size;
             arr[rare]=num;

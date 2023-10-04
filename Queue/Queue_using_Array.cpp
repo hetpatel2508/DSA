@@ -65,12 +65,14 @@ public:
     {
         if (isNotfull())
         {
-            for (int i = rare + 1; i > 0; i--)
-            {
-                arr[i] = arr[i - 1];
-            }
+            // for (int i = rare + 1; i > 0; i--)
+            // {
+            //     arr[i] = arr[i - 1];
+            // }
+            // rare++;
+            // arr[0] = num;
             rare++;
-            arr[0] = num;
+            arr[rare]=num;
         }
         else
         {
@@ -123,9 +125,9 @@ int main()
     Queue q1(temp1, sizeof(temp1)/sizeof(temp1[0]),7); // total num divide by single = size of an array
     q1.display();
 
-    q1.enqueue_circular_queue(69);
-    q1.enqueue_circular_queue(71);
-    q1.enqueue_circular_queue(73);
+    q1.enqueue_or_push(69);
+    q1.enqueue_or_push(71);
+    q1.enqueue_or_push(73);
     q1.display();
 
     q1.dequeue_or_pop();
